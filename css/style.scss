@@ -18,8 +18,9 @@ body{
 }
 .nav-wrapper{
   display: flex;
-  gap: 400px;
   align-items: center;
+  width: 100%;
+  justify-content: space-between;
 }
 .navigation, .container-nav{
   display: flex;
@@ -37,6 +38,10 @@ body{
     font-size: 16px;
     line-height: 125%;
     color: #a6a8ad;
+    transition: 0.5s;
+    &:hover{
+      color: #fff;
+    }
   }
   .nav-sign{
     text-decoration: none;
@@ -48,6 +53,12 @@ body{
     font-size: 16px;
     line-height: 115%;
     color: #121214;
+    transition: 0.5s;
+    &:hover{
+      background: #a6a8ad;
+      color: #fff;
+      border: 1px solid #a6a8ad;
+    }
   }
 
 }
@@ -63,6 +74,11 @@ body{
       font-size: 16px;
       line-height: 125%;
       color: #a6a8ad;
+      transition: 0.5s;
+      &:hover{
+        color: #fff;
+        border-bottom: 1px solid #fff;
+      }
     }
 }
 
@@ -88,8 +104,9 @@ body{
 .main-banner {
   background-image: url("../img/main_background.png");
   background-repeat: no-repeat;
-  width: 1200px;
-  height: 744px;
+  max-width: 1200px;
+  background-size: cover ;
+  background-position: center center;
   h1{
     font-weight: 400;
     font-size: 72px;
@@ -122,6 +139,10 @@ body{
     color: #fff;
     text-decoration: none;
     background: #03f;
+    transition: 0.5s;
+    &:hover{
+      background: #031c80;
+    }
   }
   .main-banner__button{
     font-weight: 400;
@@ -129,7 +150,7 @@ body{
     line-height: 150%;
     color: #fff;
     text-align: center;
-    padding-top: 150px;
+    padding: 150px 0 40px 0;
     position: relative;
     &:after{
       background-image: url("../img/arrow_down.svg");
@@ -180,6 +201,11 @@ body{
     background: #03f;
     align-items: center;
     margin: 18px 0 91px 48px;
+    transition: 0.5s;
+    &:hover{
+      transform: scale(1.1);
+      background: #031c80;
+    }
   }
   h3{
     font-weight: 400;
@@ -196,12 +222,15 @@ body{
     margin: 12px 0 0 48px;
   }
   .preview-wrapper__img{
-    width: 580px;
-    height: 386px;
+    max-width: 580px;
     margin-top: 96px;
     img{
       width: 100%;
       height: 100%;
+      transition: 0.5s;
+      &:hover{
+        transform: scale(1.02);
+      }
     }
     &:nth-child(2n){
       margin-right: 40px;
@@ -231,15 +260,17 @@ body{
 .recall-list{
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 50px;
   padding-bottom: 120px;
-  li{
+  align-items: center;
+  .recall-list__item{
     max-width: 361px;
     border-radius: 8px;
     background: #f8f8f8;
     img{
+      margin: 30px 70px;
+      max-width: 223px;
       display: inline-block;
-      margin: 32px 69px 30px;
     }
   }
   .recall-list__first__p{
@@ -261,8 +292,10 @@ body{
 .second-banner{
   background-image: url("../img/second_background.png");
   background-repeat: no-repeat;
-  width: 1200px;
+  max-width: 1200px;
   height: 744px;
+  background-size: cover ;
+  background-position: center center;
   h2{
     padding-top: 283px;
     font-weight: 400;
@@ -283,9 +316,14 @@ body{
     background: #03f;
     text-decoration: none;
     display: flex;
-    margin: 57px auto;
+    margin: 57px auto 0 auto;
     justify-content: center;
     align-items: center;
+    transition: 0.5s;
+    &:hover{
+      transform: scale(1.2);
+      background: #031c80;
+    }
   }
 }
 .footer-categories{
@@ -311,6 +349,10 @@ body{
     font-size: 12px;
     line-height: 150%;
     color: #a6a8ad;
+    transition: 0.1s;
+    &:hover{
+      color: #fff;
+    }
   }
 }
 .footer-categories-second{
@@ -329,9 +371,156 @@ body{
     font-size: 12px;
     line-height: 150%;
     color: #a6a8ad;
+    transition: 0.1s;
+    &:hover{
+      color: #fff;
+    }
   }
 }
 .footer-border{
   border-bottom: 1px solid #fff;
 }
 
+
+#menuToggle
+{
+  display: none;
+  position: relative;
+  top: 0;
+  left: 0;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+#menu-item{
+  margin-top: 20px;
+}
+#menuToggle a
+{
+  text-decoration: none;
+  color: #000;
+  font: 20px $main_font;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: #fff;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #cdcdcd;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+  opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/*
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #cdcdcd;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 70px;
+
+  background: linear-gradient(135deg, #cdcdcd 0%, #121214 100%);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}

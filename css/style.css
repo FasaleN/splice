@@ -9,6 +9,56 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.pre-loader {
+  background: #121214;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: opacity-main 3s forwards;
+}
+
+.pre-loader:before {
+  background: url("../img/logo.png") no-repeat;
+  content: "";
+  height: 35px;
+  width: 150px;
+  display: flex;
+  top: 40%;
+  left: 45%;
+  position: absolute;
+  animation: opacity-preload 3s;
+}
+
+@keyframes opacity-preload {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 100%;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacity-main {
+  90% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
 .background {
   background: #121214;
 }

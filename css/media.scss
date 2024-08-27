@@ -107,3 +107,65 @@
     flex-wrap: wrap;
   }
 }
+@media only screen and (max-width: 321px) {
+  #menuToggle {
+    display: block;
+  }
+  #menu {
+    margin-left: -290px;
+    width: 250px;
+  }
+  .main-banner {
+    h1 {
+      padding-left: 15px;
+    }
+
+    a {
+      margin-left: 15px;
+    }
+
+    .main-banner__paragraph {
+      padding-left: 15px;
+    }
+
+    .main-banner__button:after {
+      left: 156px !important;
+    }
+  }
+  .recall-title {
+    text-align: center;
+    margin: auto;
+    padding-left: 0;
+  }
+  .recall-list {
+    gap: 5px;
+    padding-left: 10px !important;
+
+    .recall-list__item {
+      max-width: 300px;
+
+      img {
+        margin-left: 39px !important;
+      }
+    }
+  }
+  .footer-categories .footer-categories__item {
+    padding: 20px !important;
+  }
+  .footer-categories-second {
+  padding-left: 0 !important;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 281px) {
+  #menuToggle {
+    display: block;
+  }
+  #menu {
+    margin-left: -264px;
+    width: 235px;
+  }
+  .main-banner .main-banner__button:after{
+    left: 137px !important;
+  }
+}
